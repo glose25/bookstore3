@@ -1,0 +1,5 @@
+bin/
+classes/
+.metadata/
+target/
+.DS_Store
