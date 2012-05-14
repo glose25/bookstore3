@@ -87,10 +87,20 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
+    
+    debug  'grails.app.bootstrap',
+           'com.testapp',
+           'org.springframework.security',
+           'org.jasig.cas'        
 }
 
 grails.plugins.springsecurity.cas.loginUri = '/login'
-grails.plugins.springsecurity.cas.serviceUrl = 'http://localhost:8080/bookstore2/j_spring_cas_security_check'
+grails.plugins.springsecurity.cas.serviceUrl = 'http://localhost:8080/bookstore3/j_spring_cas_security_check'
 grails.plugins.springsecurity.cas.serverUrlPrefix = 'https://cas-auth.rpi.edu/cas'
-grails.plugins.springsecurity.cas.proxyCallbackUrl = 'http://localhost:8080/bookstore2/secure/receptor'
+grails.plugins.springsecurity.cas.proxyCallbackUrl = 'http://localhost:8080/bookstore3/secure/receptor'
 grails.plugins.springsecurity.cas.proxyReceptorUrl = '/secure/receptor'
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'edu.rpi.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'edu.rpi.UserRole'
+grails.plugins.springsecurity.authority.className = 'edu.rpi.Role'
